@@ -2469,7 +2469,10 @@ public function showFile($target,$typefile){
 
 
 
-
+public function me(){
+	echo "im test......";
+	
+	}
 
 
 
