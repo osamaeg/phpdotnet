@@ -61,10 +61,54 @@ public $start='0';
 
 public $condtions;
 
-	
-	
-	
-	}
+
+
+
+
+
+
+/**
+* Mysql::__construct() -Function To Connect DB and select db 
+*
+*@param Host  Type:String  Host name
+*@param UserDb  Type:String  database username
+*@param PassDb  Type:String  database password
+*@param Dbname  Type:String  database name
+*@return boolean
+*/
+
+
+public function __construct($Host,$UserDb,$PassDb,$Dbname){
+$this->Connect($Host,$UserDb,$PassDb,$Dbname);
+}
+
+
+
+public function Connect($Host,$UserDb,$PassDb,$Dbname){
+
+$this->Host=$Host;
+$this->UserDb=$UserDb;
+$this->PassDb=$PassDb;
+$this->Dbname=$Dbname;
+$this->link=mysql_connect($this->Host,$this->UserDb,$this->PassDb);
+if(!$this->link){
+exit($this->Err());
+}
+if(!mysql_select_db($this->Dbname,$this->link) ){
+exit($this->Err());
+}
+else {
+return $this->link;
+
+}
+
+}
+
+
+
+
+
+}
 
 
 
