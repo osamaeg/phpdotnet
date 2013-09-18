@@ -8,5 +8,11 @@
 @CopyRight 2010
 */
 
-
+class printers extends Mysql
+{
+   public $print_arr    = array();
+   public $url          = '';
+	
+	
+}
 ?>
